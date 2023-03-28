@@ -23,7 +23,7 @@ jobs:
       - run: check.sh $(pwd) $(pwd)
       - run: cat coding-style-reports.log
       - run: |
-        grep -n coding -style-reports.log
+        grep -n coding-style-reports.log
       - run: echo ::error file=coding-style-reports.log,line=1,endLine=10,title=MAJOR/MINOR coding style error::error reference
 
   check_program_compilation:
