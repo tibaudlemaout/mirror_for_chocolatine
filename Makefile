@@ -13,7 +13,7 @@ NAME =	pain_au_chocolat
 
 CSFML = -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
 
-LIB = -L lmy 
+LIB = -L lmy
 
 all:	$(NAME)
 
