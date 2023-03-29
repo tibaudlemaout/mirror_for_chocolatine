@@ -9,7 +9,7 @@ on:
     branches-ignore:
       - "ga-ignore-*"
 
-environment:
+env:
   MIRROR_URL: "git@github.com:EpitechPromo2027/B-DOP-200-NAN-2-1-chocolatine-tibaud.le-maout.git"
   EXECUTABLES: "binary"
 
