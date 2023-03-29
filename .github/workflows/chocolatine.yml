@@ -28,7 +28,7 @@ jobs:
       - name: print error annotations
         run: |
             if [ -s "coding-style-reports.log" ]; then
-              cat coding-style-reports.log | grep -v '^$' | while read line ; do echo "::error:: $line" ; done
+              cat coding-style-reports.log | grep -v '^$' | while read line ; do echo "::error:: title =MAJOR/MINOR coding style error,$line" ; done
               exit 1 ;
             fi
 
