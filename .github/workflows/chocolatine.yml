@@ -26,9 +26,6 @@ jobs:
       - run: |
           if [ -s "coding-style-reports.log" ]; then
             cat coding-style-reports.log | grep -v '^$' | while read line ; do echo "::error:: $line" ; done
-          fi
-      - run: |
-          if [ -s "coding-style-reports.log" ]; then
             exit 1 ;
           fi
 
