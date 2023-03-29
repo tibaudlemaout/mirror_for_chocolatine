@@ -20,7 +20,6 @@ jobs:
     steps:
       - name: checkout current repo
         uses: actions/checkout@v3
-        run: echo ${GITHUB_REF}
       - name: execute coding style
         run: |
           check.sh $(pwd) $(pwd) | cat coding-style-reports.log
