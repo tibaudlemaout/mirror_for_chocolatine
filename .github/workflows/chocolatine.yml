@@ -18,19 +18,19 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/epitech/coding-style-checker:latest
     steps:
-      name: checkout current repo
+      - name: checkout current repo
         uses: actions/checkout@v3
         run: echo ${GITHUB_REF}
-      name: execute coding style
+      - name: execute coding style
         run: |
           check.sh $(pwd) $(pwd) | cat coding-style-reports.log
-      - run: echo ::error file=coding-style-reports.log,line=1,endLine=10,title=MAJOR/MINOR coding style error::error reference
-      name: print error annotations
-        # run: |
-        #     if [ -s "coding-style-reports.log" ]; then
-        #       cat coding-style-reports.log | grep -v '^$' | while read line ; do echo "::error:: title =MAJOR/MINOR coding style error,$line" ; done
-        #       exit 1 ;
-        #     fi
+      # run: echo ::error file=coding-style-reports.log,line=1,endLine=10,title=MAJOR/MINOR coding style error::error reference
+      - name: print error annotations
+        run: |
+            if [ -s "coding-style-reports.log" ]; then
+              cat coding-style-reports.log | grep -v '^$' | while read line ; do echo "::error:: title =MAJOR/MINOR coding style error,$line" ; done
+              exit 1 ;
+            fi
 
   check_program_compilation:
     needs: check_coding_style
