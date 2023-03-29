@@ -20,7 +20,8 @@ jobs:
     steps:
       uses: actions/checkout@v3
       run: echo ${GITHUB_REF}
-      run: check.sh $(pwd) $(pwd) | cat coding-style-reports.log
+      run: |
+          check.sh $(pwd) $(pwd) | cat coding-style-reports.log
       run: echo ::error file=coding-style-reports.log,line=1,endLine=10,title=MAJOR/MINOR coding style error::error reference
       run: |
           if [ -s "coding-style-reports.log" ]; then
